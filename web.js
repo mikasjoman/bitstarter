@@ -15,9 +15,10 @@ var fileWithText = new BufferedReader ("index.html", { encoding: "utf8" })
         console.log ("EOF");
     })
     .read ();
+var secondFile = fileWithText.toString('utf-8');
 
 app.get('/', function(request, response) {
-  response.send(fileWithText.toString('utf-8'));
+  response.send(secondFile);
 });
 
 var port = process.env.PORT || 5000;
